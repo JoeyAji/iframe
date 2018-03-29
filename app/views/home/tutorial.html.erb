@@ -1,0 +1,12 @@
+<h1> Welcome to design pop</h1>
+<p>This is where you can get web design inspiration, swipe through save what you like</p>	
+
+
+	<li><%= link_to "Next", website_path(@sitelikes, website_id: @x, user_id: @nowuser ) %></li>
+</br></br>
+
+ <% if user_signed_in? %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn" %>
+<%else%>
+	<%= render "devise/sessions/form" %>
+<%end%>

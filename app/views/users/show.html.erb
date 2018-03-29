@@ -1,0 +1,15 @@
+<h1> Hi  <%= current_user.email  %></h1>
+</br>
+
+
+
+
+
+<h2> User #<%= current_user.id%>'s likes </h2>
+<% @sitelikes.each do |x|%>
+ website #<%= x.website_id %><br>
+<%= @websites.find_by_id(x.website_id).siteurl %>
+<% end %>
+
+
+
