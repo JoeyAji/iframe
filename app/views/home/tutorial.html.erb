@@ -1,22 +1,21 @@
-<h1> Welcome to design pop</h1>
-<p>This is where you can get web design inspiration, swipe through save what you like</p>	
 
 
-	<li><%= link_to "Next", website_path(@sitelikes, website_id: @x, user_id: @nowuser ) %></li>
+<body class = "hi">
 </br></br>
+<div class="sign">
+<div class="logo"><%= image_tag("logo.png") %></div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br>
+<h1 class="tool">A tool for web design inspiration</h1>	
+</div>
+
+<p class="sub">Quickly scroll through some of the webs most beautiful & functional designs</p>
 
 
+</br></br>
+<div class="sign">
+<%= button_to "Next", website_path, :id => "btn",:class => "btn btn-primary btn-lg", :method => :get %></br></br>
+  <%= link_to image_tag("fb.png"), user_facebook_omniauth_authorize_path%></br></br></br>
+  <%= render "devise/sessions/form" %>
 
-<!-- app/views/pages/home.html.erb -->
-
-<% unless current_user %>
-  <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-<% else %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-<% end %>
-
-<% if user_signed_in? %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn" %>
-<%else%>
-	<%= render "devise/sessions/form" %>
-<%end%>
+</div>
+</body>

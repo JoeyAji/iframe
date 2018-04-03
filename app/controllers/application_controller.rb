@@ -1,4 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  config.force_ssl = true
+
+private
+
+  def require_login
+    if current_user
+      redirect_to website_path
+
+    end
+  end
+
 end

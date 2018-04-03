@@ -1,3 +1,41 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+  height: 100%;
+}
+.hi {
+	min-height: 100%;
+	background-image: image_url('background.jpg');
+	background-repeat:no-repeat;
+	height: 100%;
+	width: auto;
+	background-position:center;
+	background-size: cover;
+}
+
+.tool {
+	color: white;
+	font-size:45px;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight:100;
+    text-decoration: none;
+    text-decoration-color: white;
+
+
+}
+.sub {
+	color: white;
+	font-size: 18px;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-weight:100;
+    text-decoration: none;
+    text-decoration-color: white;
+    text-align: center !important;
+    width: 40%;
+    margin: auto;
+    line-height: 1.3;
+
+}

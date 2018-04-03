@@ -20,8 +20,4 @@
 
 
 
-document.getElementById("favorite").addEventListener("click", myFunction);
 
-function myFunction() {
-    document.getElementById("favorite").innerHTML = "YOU CLICKED ME!";
-}

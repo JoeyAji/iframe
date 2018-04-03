@@ -4,8 +4,14 @@ class WebsitesController < ApplicationController
 
   # GET /websites
   # GET /websites.json
+
+
   def index
-    @websites = Website.all
+    if params[:websites] == nil
+      @websites = Website.all
+    else 
+      @websites = params[:websites]
+    end
 
       if params[:from_create] == nil
         @x=rand(1..@websites.size)
@@ -17,6 +23,7 @@ class WebsitesController < ApplicationController
         @nowuser= params[:user_id]
         params[:from_create] == nil
       end
+
   end
 
   def createlike
@@ -24,6 +31,11 @@ class WebsitesController < ApplicationController
     Sitelike.create(website_id: params[:website_id], user_id: params[:user_id])
     redirect_to website_path(from_create: true, website_id: params[:website_id], user_id: params[:user_id])
 
+  end
+
+  def taggedsites
+    @websites = Websites.where(tag: params[:tag]).distinct
+    redirect_to website_path(websites: @websites)
   end
 
 end
